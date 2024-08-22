@@ -3,6 +3,6 @@
     "SageMakerProjectName": "build-deploy-github4",
     "StageName": "staging",
     "EndpointInstanceCount": "1",
-    "EndpointInstanceType": "ml.c4.2xlarge"
+    "EndpointInstanceType": "ml.c4.xlarge"
   }
 }
