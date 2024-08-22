@@ -148,7 +148,7 @@ def get_pipeline(
     pipeline_session = get_pipeline_session(region, default_bucket)
 
     # parameters for pipeline execution
-    processing_instance_count = ParameterInteger(name="ProcessingInstanceCount", default_value=1)
+    processing_instance_count = ParameterInteger(name="ProcessingInstanceCount", default_value=2)
     model_approval_status = ParameterString(
         name="ModelApprovalStatus", default_value="PendingManualApproval"
     )
@@ -192,7 +192,7 @@ def get_pipeline(
     xgb_train = Estimator(
         image_uri=image_uri,
         instance_type=training_instance_type,
-        instance_count=1,
+        instance_count=2,
         output_path=model_path,
         base_job_name=f"{base_job_prefix}/abalone-train",
         sagemaker_session=pipeline_session,
@@ -234,7 +234,7 @@ def get_pipeline(
         image_uri=image_uri,
         command=["python3"],
         instance_type=processing_instance_type,
-        instance_count=1,
+        instance_count=2,
         base_job_name=f"{base_job_prefix}/script-abalone-eval",
         sagemaker_session=pipeline_session,
         role=role,
