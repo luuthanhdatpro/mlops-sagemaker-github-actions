@@ -64,7 +64,7 @@ if __name__ == "__main__":
     endpoint_name = "{}-{}".format(
         config["Parameters"]["SageMakerProjectName"], config["Parameters"]["StageName"]
     )
-    results = test_endpoint(endpoint_name)
+    results = test_endpoint("build-deploy-github4-staging")
 
     # Print results and write to file
     logger.debug(json.dumps(results, indent=4))
