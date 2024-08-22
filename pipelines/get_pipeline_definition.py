@@ -40,7 +40,7 @@ def main():  # pragma: no cover
         dest="file_name",
         type=str,
         default=None,
-        help="The file to output the pipeline definition json to.",
+        help="The file to output the pipeline definition json to .",
     )
     parser.add_argument(
         "-kwargs",
